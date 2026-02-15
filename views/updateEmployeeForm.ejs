@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Employee Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f7f9;
+            padding: 20px;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-size: 24px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        label {
+            font-size: 13px;
+            font-weight: 700;
+            color: #34495e;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input, select {
+            padding: 12px;
+            margin-bottom: 18px;
+            border: 1px solid #dcdfe6;
+            border-radius: 6px;
+            font-size: 15px;
+            color: #606266;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.2);
+        }
+
+        .readonly-field {
+            background-color: #f5f7fa;
+            color: #909399;
+            cursor: not-allowed;
+            border-style: dashed;
+        }
+
+        button[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            padding: 13px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 5px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        .container > button {
+            width: 100%;
+            margin-top: 12px;
+            background: #ffffff;
+            border: 1px solid #dcdfe6;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .container > button:hover {
+            background: #fdfdfd;
+            border-color: #3498db;
+        }
+
+        button a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #606266;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        button:last-child:hover {
+            border-color: #e74c3c;
+            background: #fff5f5;
+        }
+
+        button:last-child a:hover {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="/update/employee" class="box" method="POST">
+            <h1>Update Employee</h1>
+            <label for="">Enter username</label>
+            <input type="text" name="username" value=<%=user.username%> readonly class="readonly-field">
+            <label for="">Enter password</label>
+            <input type="text" name="password" value=<%=user.password%> required>
+            <label for="">Enter full name</label>
+            <input type="text" name="name" value=<%=user.name%> required>
+            <label for="">Enter salary</label>
+            <input type="number" name="salary" value=<%=user.salary%> required>
+            <select name="role" value=<%=user.role%> required>
+                <option value="developer">Developer</option>
+                <option value="tester">Tester</option>
+                <option value="hr">HR</option>
+            </select>
+            <button type="submit">Update</button>
+        </form>
+        <button><a href="/home">Home Page</a></button>
+        <button><a href="/logout">Logout</a></button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #f8fafc;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .head {
+            color: #1e293b;
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            filter: brightness(95%);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        button a {
+            display: block;
+            padding: 16px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            color: white; /* Default for most colored buttons */
+        }
+
+        /* Individual Button Colors */
+        
+        .add {
+            background-color: #10b981; /* Emerald Green */
+        }
+
+        .update {
+            background-color: #f59e0b; /* Amber/Orange */
+        }
+
+        .view {
+            background-color: #3b82f6; /* Blue */
+        }
+
+        .delete {
+            background-color: #ef4444; /* Red */
+        }
+
+        .viewusername {
+            background-color: #8b5cf6; /* Purple */
+        }
+
+        .logout {
+            background-color: #64748b; /* Slate Gray */
+            margin-top: 20px;
+        }
+
+        /* Active State for feedback */
+        button:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1 class="head">Home Page</h1>
+        <button class="add"><a href="/add">Add Employee</a></button>
+        <button class="update"><a href="/update">Update Employee</a></button>
+        <button class="view"><a href="/view">View ALL</a></button>
+        <button class="delete"><a href="/delete">Delete Employee</a></button>
+        <button class="viewusername"><a href="/view/username">View by Username</a></button>
+        <button class="logout"><a href="/logout">Logout</a></button>
+    </div>
+</body>
+</html>

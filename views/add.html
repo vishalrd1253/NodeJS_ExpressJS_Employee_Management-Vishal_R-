@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .box {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            width: 100%;
+            max-width: 450px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #111827;
+            font-size: 24px;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 6px;
+        }
+
+        input, select {
+            padding: 10px 12px;
+            margin-bottom: 18px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+            margin-top: 5px;
+        }
+
+        button[type="submit"] {
+            background-color: #4f46e5;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #4338ca;
+        }
+
+        .box > button {
+            background-color: transparent;
+            padding: 0;
+            margin-top: 8px;
+        }
+
+        button a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #6b7280;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+        }
+
+        button a:hover {
+            background-color: #f9fafb;
+            color: #111827;
+            border-color: #9ca3af;
+        }
+
+        button:has(a[href="/logout"]) a {
+            border: none;
+            color: #ef4444;
+        }
+
+        button:has(a[href="/logout"]) a:hover {
+            background-color: #fef2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Employee Details</h1>
+        <form class="form" action="/employee/add" method="POST">
+            <label for="">Enter username</label>
+            <input type="text" name="username" required>
+            <label for="">Enter password</label>
+            <input type="text" name="password"required>
+            <label for="">Enter full name</label>
+            <input type="text" name="name"required>
+            <label for="">Enter salary</label>
+            <input type="number" name="salary"required>
+            <select name="role"required>
+                <option value="developer">Developer</option>
+                <option value="manager">Manager</option>
+            </select>
+            <button type="submit">Add</button>
+        </form>
+        <button><a href="/home">Home</a></button>
+        <button><a href="/logout">logout</a></button>
+    </div>
+</body>
+</html>
